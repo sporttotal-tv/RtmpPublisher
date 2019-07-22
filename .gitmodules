@@ -1,0 +1,3 @@
+[submodule "LibRtmp-Client-for-Android"]
+	path = LibRtmp-Client-for-Android
+	url = git@github.com:ant-media/LibRtmp-Client-for-Android.git
