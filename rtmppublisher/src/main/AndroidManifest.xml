@@ -1,3 +1,4 @@
-<manifest
-  package="com.takusemba.rtmppublisher"
-  />
+<manifest package="com.takusemba.rtmppublisher"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA" />
+</manifest>
