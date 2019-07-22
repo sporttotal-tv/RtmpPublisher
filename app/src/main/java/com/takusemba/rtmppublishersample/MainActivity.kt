@@ -3,10 +3,10 @@ package com.takusemba.rtmppublishersample
 import android.opengl.GLSurfaceView
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.takusemba.rtmppublisher.Publisher
 import com.takusemba.rtmppublisher.PublisherListener
 
@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity(), PublisherListener {
     private lateinit var cameraButton: ImageView
     private lateinit var label: TextView
 
-    private val url = BuildConfig.STREAMING_URL
+    private val url = "rtmp://192.168.1.154/live" //BuildConfig.STREAMING_URL
+//    private val url = "rtmp://271a16c17fa542efa72e342611faa3a4-sttvmamprodmediaservice-euwe.channel.media.azure.net:1935/live/55b844d8efa74173a013edfa9bee35a8" //BuildConfig.STREAMING_URL
     private val handler = Handler()
     private var thread: Thread? = null
     private var isCounting = false

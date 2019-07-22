@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 
 import net.butterflytv.rtmp_client.RTMPMuxer;
 
@@ -35,7 +36,8 @@ class Muxer {
             public boolean handleMessage(Message msg) {
                 switch (msg.what) {
                     case MSG_OPEN:
-                        rtmpMuxer.open((String) msg.obj, msg.arg1, msg.arg2);
+                        int result = rtmpMuxer.open((String) msg.obj, msg.arg1, msg.arg2);
+                        Log.d("AIDAN", "open result: " + result);
                         if (listener != null) {
                             uiHandler.post(new Runnable() {
                                 @Override
