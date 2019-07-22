@@ -12,6 +12,11 @@ import com.takusemba.rtmppublisher.PublisherListener
 
 class MainActivity : AppCompatActivity(), PublisherListener {
 
+    companion object {
+        const val REMOTE_URL = "rtmp://26f22bd7eb73461282e47bfb07820e4e-sttvmamprodmediaservice-euwe.channel.media.azure.net:1935/live/fe67390cc8e3496185df2d06d929cafa"
+        const val LOCAL_URL = "rtmp://192.168.1.154/live"
+        const val BUILD_CONFIG_URL = BuildConfig.STREAMING_URL
+    }
     private lateinit var publisher: Publisher
     private lateinit var glView: GLSurfaceView
     private lateinit var container: RelativeLayout
@@ -19,8 +24,7 @@ class MainActivity : AppCompatActivity(), PublisherListener {
     private lateinit var cameraButton: ImageView
     private lateinit var label: TextView
 
-    private val url = "rtmp://192.168.1.154/live" //BuildConfig.STREAMING_URL
-//    private val url = "rtmp://271a16c17fa542efa72e342611faa3a4-sttvmamprodmediaservice-euwe.channel.media.azure.net:1935/live/55b844d8efa74173a013edfa9bee35a8" //BuildConfig.STREAMING_URL
+    private val url = LOCAL_URL
     private val handler = Handler()
     private var thread: Thread? = null
     private var isCounting = false
