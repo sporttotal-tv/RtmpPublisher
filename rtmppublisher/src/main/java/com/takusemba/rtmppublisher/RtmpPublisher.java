@@ -96,8 +96,8 @@ public class RtmpPublisher implements Publisher, SurfaceTexture.OnFrameAvailable
         return streamer.isStreaming();
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    public void onResume(LifecycleOwner owner) {
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    public void onStart(LifecycleOwner owner) {
         Camera.Parameters params = camera.open();
         final Camera.Size size = params.getPreviewSize();
         glView.onResume();
@@ -109,8 +109,8 @@ public class RtmpPublisher implements Publisher, SurfaceTexture.OnFrameAvailable
         });
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    public void onPause(LifecycleOwner owner) {
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    public void onStop(LifecycleOwner owner) {
         if (camera != null) {
             camera.close();
         }
